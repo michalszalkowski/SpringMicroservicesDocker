@@ -1,6 +1,15 @@
 # Base on
 - https://www.youtube.com/watch?v=ZyK5QrKCbwM
 
+# Build project
+- _docker/build.sh
+
+# Run
+- _docker/up.sh
+
+# Kill
+- _docker/down.sh
+
 # Gateway
 - http://localhost:8080/post-service
 - http://localhost:8080/article-service
@@ -21,3 +30,12 @@
 
 # Eureka
 - http://localhost:8761/
+
+# Diagrams
+![Security Event Dashboard](assets/img1.png)
+
+# Eureka
+![Security Event Dashboard](assets/img2.png)
+
+# Console
+![Security Event Dashboard](assets/img3.png)
