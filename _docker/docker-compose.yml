@@ -33,27 +33,27 @@ services:
     networks:
       - szalek-network
 
-#  post-service:
-#    image: szalek/post-service
-#    build: ./post-service
-#    container_name: post-service
-#    ports: ['8082:8080']
-#    depends_on:
-#      - eureka-service
-#      - config-service
-#    networks:
-#      - szalek-network
-#
-#  gateway-service:
-#    image: szalek/gateway-service
-#    build: ./gateway-service
-#    container_name: gateway-service
-#    ports: ['8080:8080']
-#    depends_on:
-#      - eureka-service
-#      - config-service
-#    networks:
-#      - szalek-network
+  post-service:
+    image: szalek/post-service
+    build: ./post-service
+    container_name: post-service
+    ports: ['8082:8080']
+    depends_on:
+      - eureka-service
+      - config-service
+    networks:
+      - szalek-network
+
+  gateway-service:
+    image: szalek/gateway-service
+    build: ./gateway-service
+    container_name: gateway-service
+    ports: ['8080:8080']
+    depends_on:
+      - eureka-service
+      - config-service
+    networks:
+      - szalek-network
 
 networks:
   szalek-network:
