@@ -1,0 +1,60 @@
+version: '3'
+
+services:
+
+  config-service:
+    image: szalek/config-service
+    build: ./config-service
+    container_name: config-service
+    ports: ['8888:8888']
+    networks:
+      - szalek-network
+
+  eureka-service:
+    image: szalek/eureka-service
+    build: ./eureka-service
+    container_name: eureka-service
+    ports: ['8761:8761']
+    expose:
+      - "8761"
+    depends_on:
+      - config-service
+    networks:
+      - szalek-network
+
+  article-service:
+    image: szalek/article-service
+    build: ./article-service
+    container_name: article-service
+    ports: ['8081:8080']
+    depends_on:
+      - eureka-service
+      - config-service
+    networks:
+      - szalek-network
+
+  post-service:
+    image: szalek/post-service
+    build: ./post-service
+    container_name: post-service
+    ports: ['8082:8080']
+    depends_on:
+      - eureka-service
+      - config-service
+    networks:
+      - szalek-network
+
+  gateway-service:
+    image: szalek/gateway-service
+    build: ./gateway-service
+    container_name: gateway-service
+    ports: ['8080:8080']
+    depends_on:
+      - eureka-service
+      - config-service
+    networks:
+      - szalek-network
+
+networks:
+  szalek-network:
+    external: true
