@@ -76,11 +76,11 @@ class TestRestController {
 	}
 
 
-	@RequestMapping("/article/storage")
-	public Map articleStorage() {
-		RestTemplate restTemplate = new RestTemplate();
-		Map json = restTemplate.getForObject("http://storage-service:8080/article", Map.class);
-		return json;
-	}
+//	@RequestMapping("/article/storage")
+//	public Map articleStorage() {
+//		RestTemplate restTemplate = new RestTemplate();
+//		Map json = restTemplate.getForObject("http://storage-service:8080/article", Map.class);
+//		return json;
+//	}
 
 }

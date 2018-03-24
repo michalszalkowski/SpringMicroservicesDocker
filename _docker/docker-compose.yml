@@ -45,7 +45,7 @@ services:
       - config-service
     networks:
       - szalek-network
-      - szalek-network-storage
+#      - szalek-network-storage
 
   post-service:
     image: szalek/post-service
@@ -58,18 +58,18 @@ services:
       - config-service
     networks:
       - szalek-network
-
-  storage-service:
-    image: szalek/storage-service
-    build: ./storage-service
-    container_name: storage-service
-    expose:
-      - "8080"
-    networks:
-      - szalek-network-storage
+#
+#  storage-service:
+#    image: szalek/storage-service
+#    build: ./storage-service
+#    container_name: storage-service
+#    expose:
+#      - "8080"
+#    networks:
+#      - szalek-network-storage
 
 networks:
   szalek-network:
     external: true
-  szalek-network-storage:
-    external: true
+#  szalek-network-storage:
+#    external: true
