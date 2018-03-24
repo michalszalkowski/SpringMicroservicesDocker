@@ -15,18 +15,21 @@
 - http://localhost:8080/article-service
 
 # Post Service
-- http://localhost:8081/
+- `[NOT AVAILABLE]` http://localhost:8081/
+- `this is internal service, port is not mapped to host`
 
 # Article Service
-- http://localhost:8082/
+- `[NOT AVAILABLE]` http://localhost:8082/
+- `this is internal service, port is not mapped to host`
 
 # Configuration
 - https://github.com/szalek/SpringMicroservicesConfig
 
 # Configuration API
-- http://localhost:8888/eureka-service/master
-- http://localhost:8888/article-service/master
-- http://localhost:8888/post-service/master
+- `[NOT AVAILABLE]`http://localhost:8888/eureka-service/master
+- `[NOT AVAILABLE]`http://localhost:8888/article-service/master
+- `[NOT AVAILABLE]`http://localhost:8888/post-service/master
+- `this is internal service, port is not mapped to host`
 
 # Eureka
 - http://localhost:8761/
