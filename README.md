@@ -11,8 +11,9 @@
 - _docker/down.sh
 
 # Gateway
-- http://localhost:8080/post-service
-- http://localhost:8080/article-service
+- http://localhost:8080/post-service -> http://post-service:8080/
+- http://localhost:8080/article-service -> http://article-service:8080/
+- http://localhost:8080/article-service/article/storage  -> http://article-service:8080/ ->  http://storage-service:8080/article/storage
 
 # Post Service
 - `[NOT AVAILABLE]` http://localhost:8081/
@@ -20,6 +21,10 @@
 
 # Article Service
 - `[NOT AVAILABLE]` http://localhost:8082/
+- `this is internal service, port is not mapped to host`
+
+# Storage Service
+- `[NOT AVAILABLE]` http://localhost:8083/
 - `this is internal service, port is not mapped to host`
 
 # Configuration

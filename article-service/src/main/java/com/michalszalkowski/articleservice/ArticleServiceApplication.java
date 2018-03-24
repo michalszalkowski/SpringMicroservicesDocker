@@ -12,11 +12,13 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Collection;
+import java.util.Map;
 import java.util.stream.Stream;
 
 @EnableDiscoveryClient
@@ -64,7 +66,7 @@ interface ArticleRepository extends JpaRepository<Article, Long> {
 }
 
 @RestController
-class ConfigCheckRestController {
+class TestRestController {
 	@Value("${message.test:ConfigurationNotAvailable}")
 	private String message;
 
@@ -72,4 +74,13 @@ class ConfigCheckRestController {
 	public String message() {
 		return this.message;
 	}
+
+
+	@RequestMapping("/article/storage")
+	public Map articleStorage() {
+		RestTemplate restTemplate = new RestTemplate();
+		Map json = restTemplate.getForObject("http://storage-service:8080/article", Map.class);
+		return json;
+	}
+
 }
